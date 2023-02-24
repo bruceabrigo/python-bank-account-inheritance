@@ -19,7 +19,23 @@ class BankAccount:
 
 
 class ChildrensAccount:
-  pass
+    def __init__(self, balance=0):
+        self.balance = balance
+
+    def __str__(self):
+       return f'{self.balance}'
+    
+    # define a deposit method
+    def deposit(self, deposit):
+       self.balance = deposit
+
+    # create withdraw method
+    def withdraw(self, withdraw):
+       self.balance -= withdraw
+    
+    # acc interest by 2%
+    def accumulate_interest(self):
+       self.balance += 10
 
 class OverdraftAccount:
   pass
@@ -33,14 +49,14 @@ basic_account.accumulate_interest()
 print("Basic account has ${}".format(basic_account.balance))
 print()
 
-# childs_account = ChildrensAccount()
-# childs_account.deposit(34)
-# print("Child's account has ${}".format(childs_account.balance))
-# childs_account.withdraw(17)
-# print("Child's account has ${}".format(childs_account.balance))
-# childs_account.accumulate_interest()
-# print("Child's account has ${}".format(childs_account.balance))
-# print()
+childs_account = ChildrensAccount()
+childs_account.deposit(34)
+print("Child's account has ${}".format(childs_account.balance))
+childs_account.withdraw(17)
+print("Child's account has ${}".format(childs_account.balance))
+childs_account.accumulate_interest()
+print("Child's account has ${}".format(childs_account.balance))
+print()
 
 # overdraft_account = OverdraftAccount()
 # overdraft_account.deposit(12)
