@@ -9,8 +9,14 @@ class BankAccount:
     def deposit(self, deposit):
        self.balance = deposit
 
+    # create withdraw method
     def withdraw(self, withdraw):
        self.balance -= withdraw
+    
+    # acc interest by 2%
+    def accumulate_interest(self):
+       self.balance += self.balance * 0.02
+
 
 class ChildrensAccount:
   pass
