@@ -9,6 +9,9 @@ class BankAccount:
     def deposit(self, deposit):
        self.balance = deposit
 
+    def withdraw(self, withdraw):
+       self.balance -= withdraw
+
 class ChildrensAccount:
   pass
 
@@ -17,11 +20,12 @@ class OverdraftAccount:
 
 basic_account = BankAccount()
 basic_account.deposit(600)
-# basic_account.withdraw(17)
 print("Basic account has ${}".format(basic_account.balance))
-# basic_account.accumulate_interest()
-# print("Basic account has ${}".format(basic_account.balance))
-# print()
+basic_account.withdraw(17)
+print("Basic account has ${}".format(basic_account.balance))
+basic_account.accumulate_interest()
+print("Basic account has ${}".format(basic_account.balance))
+print()
 
 # childs_account = ChildrensAccount()
 # childs_account.deposit(34)
